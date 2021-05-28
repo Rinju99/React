@@ -1,13 +1,15 @@
-import { useState } from "react";
 import Task from "./Task";
 
-const Tasks = ({ tasks }) => {
-  const [tasks, setTasks] = useState(initialState);
-
+const Tasks = ({ tasks, onDelete, onToggle }) => {
   return (
     <div>
-      {Tasks.map((task) => (
-        <Task key={task.id} task={task} />
+      {tasks.map((task) => (
+        <Task
+          key={task.id}
+          task={task}
+          onDelete={onDelete}
+          onToggle={onToggle}
+        />
       ))}
     </div>
   );
